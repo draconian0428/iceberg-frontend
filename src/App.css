@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Abel-Regular';
+  src: url('./assets/fonts/Abel-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Abel-Bold';
+  src: url('./assets/fonts/Abel-Bold.otf');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+} 
