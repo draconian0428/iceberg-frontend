@@ -1,7 +1,7 @@
+/* eslint-disable no-console */
 import axios from 'axios';
-import { BASENFT_PROPS, CUSNFT_PROPS } from '../config/config';
+import { BASENFT_PROPS, CUSNFT_PROPS } from '../types';
 import { APIS } from '../config/apis';
-
 
 // =================================
 // Get Default cards

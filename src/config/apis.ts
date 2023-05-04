@@ -10,5 +10,5 @@ export const APIS = {
   GET_CARDS: BACKEND_BASE_URL + '/getnfts',
   GET_CARD : BACKEND_BASE_URL + '/getnft',
   CREATE_NEW_CUSNFT: BACKEND_BASE_URL + "/createmynft",
-  GET_MY_NFTS: BACKEND_BASE_URL + "/getmynfts",
+  GET_MY_NFTS: BACKEND_BASE_URL + "/getmynfts"
 }

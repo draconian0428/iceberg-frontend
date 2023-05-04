@@ -12,20 +12,13 @@ interface StateProviderProps {
 export const StateContext = createContext<StateContextInterface | null>(null);
 
 export const StateProvider = ({ children }: StateProviderProps) => {
-
   // Setting Username directly because this has no credential page
 
   const [username, setUName] = useState<string>('jakus');
 
   const setUsername = (name: string) => {
     setUName(name);
-  }
+  };
 
-  return (
-    <StateContext.Provider value={{ username, setUsername }}>
-      {
-        children
-      }
-    </StateContext.Provider>
-  )
-}
+  return <StateContext.Provider value={{ username, setUsername }}>{children}</StateContext.Provider>;
+};

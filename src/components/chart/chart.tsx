@@ -1,14 +1,12 @@
+/* eslint-disable no-console */
 import { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
-import {
-  CHART_NFT_DATA
-} from '../../pages/mynfts'
+import { CHART_NFT_DATA } from '../../pages/mynfts';
 
-export const  NFTChart = ({ nfts }: {nfts: CHART_NFT_DATA[]}) => {
-
+export const NFTChart = ({ nfts }: { nfts: CHART_NFT_DATA[] }) => {
   const [oldValues, setOldValues] = useState<number[]>([]);
   const [cusValues, setCusValues] = useState<number[]>([]);
-  const [nftNames, setNFTNames] = useState<string[]>([]); 
+  const [nftNames, setNFTNames] = useState<string[]>([]);
 
   useEffect(() => {
     console.log(nfts);
@@ -20,17 +18,18 @@ export const  NFTChart = ({ nfts }: {nfts: CHART_NFT_DATA[]}) => {
       setOldValues((old) => [...old, nfts[i].oldValue]);
       setCusValues((old) => [...old, nfts[i].value]);
     }
-  }, [nfts])
+  }, [nfts]);
 
-  
-
-  const series = [{
-    data: oldValues,
-    name: 'old value'
-  }, {
-    data: cusValues,
-    name: 'custom value'
-  }]
+  const series = [
+    {
+      data: oldValues,
+      name: 'old value'
+    },
+    {
+      data: cusValues,
+      name: 'custom value'
+    }
+  ];
   const options: any = {
     chart: {
       type: 'bar',
@@ -40,8 +39,8 @@ export const  NFTChart = ({ nfts }: {nfts: CHART_NFT_DATA[]}) => {
       bar: {
         horizontal: true,
         dataLabels: {
-          position: 'top',
-        },
+          position: 'top'
+        }
       }
     },
     dataLabels: {
@@ -66,13 +65,11 @@ export const  NFTChart = ({ nfts }: {nfts: CHART_NFT_DATA[]}) => {
       labels: {
         show: true,
         style: {
-          color: 'blue',
-        },
+          color: 'blue'
+        }
       }
-    },
+    }
   };
 
-  return (
-    <ReactApexChart options={options} series={series} type="bar" height={500} />
-  );
-}
+  return <ReactApexChart options={options} series={series} type="bar" height={500} />;
+};

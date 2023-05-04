@@ -1,10 +1,5 @@
 import React, { Suspense } from 'react';
-import {
-  Route,
-  Routes,
-  BrowserRouter as Router,
-  Navigate,
-} from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-dom';
 
 import { Landing } from './pages/landing';
 import { Provider } from './Provider';
@@ -15,7 +10,6 @@ import { MyNFTs } from './pages/mynfts';
 import './App.css';
 
 function App() {
-
   return (
     <Suspense fallback={<>Loading...</>}>
       <Router>
@@ -23,7 +17,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path={PUBLIC_URLS.LANDING} element={<Landing></Landing>} />
-              <Route path={PUBLIC_URLS.CUSTOM_NFT + "/:id" } element={<Customizing></Customizing>}></Route>
+              <Route path={PUBLIC_URLS.CUSTOM_NFT + '/:id'} element={<Customizing></Customizing>}></Route>
               <Route path={PUBLIC_URLS.EXPLORE_MY_NFTS} element={<MyNFTs></MyNFTs>}></Route>
             </Routes>
           </Layout>
